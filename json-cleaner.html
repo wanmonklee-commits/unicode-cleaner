@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     
     <link rel="canonical" href="https://unicodecleaner.online/json-cleaner.html">
-    <link rel="stylesheet" href="css/style.css?v=2.0">
+    <link rel="stylesheet" href="css/style.css?v=3.0">
     
     <meta property="og:title" content="JSON Formatter & Cleaner – Validate, Pretty Print, Minify">
     <meta property="og:description" content="Validate JSON, pretty print, minify, and clean hidden characters instantly. 100% client-side and secure.">
@@ -26,6 +26,9 @@
     
     <meta name="author" content="UnicodeCleaner.online">
     <meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icons/icon-180.png">
+<link rel="manifest" href="/manifest.json">
     
     <script type="application/ld+json">
     {
@@ -55,17 +58,32 @@
 
 <div class="container">
 
-    <nav class="top-nav">
-        <div class="nav-brand">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
-            Unicode Cleaner
-        </div>
-        <div class="controls-top">
-            <button class="btn-icon" id="themeToggle" aria-label="Toggle Dark Mode">
-                <span id="themeIcon">◑</span>
-            </button>
-        </div>
-    </nav>
+    <nav class="top-nav" aria-label="Primary navigation">
+    <a class="nav-brand" href="/" aria-label="UnicodeCleaner home">
+        <img class="brand-mark" src="/assets/brand-mark.svg" alt="" width="36" height="36">
+        <span class="brand-wordmark"><span>Unicode</span><strong>Cleaner</strong></span>
+    </a>
+
+    <div class="nav-links" aria-label="Main links">
+        <a href="/">Tools</a>
+        <a href="/#guides">Guides</a>
+        <a href="/about.html">About</a>
+    </div>
+
+    <div class="nav-actions">
+        <details class="mobile-menu">
+            <summary aria-label="Open menu">Menu</summary>
+            <div class="mobile-menu-panel">
+                <a href="/">Tools</a>
+                <a href="/#guides">Guides</a>
+                <a href="/about.html">About</a>
+            </div>
+        </details>
+        <button class="btn-icon" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+            <span id="themeIcon" aria-hidden="true">☾</span>
+        </button>
+    </div>
+</nav>
 
     <header class="hero">
         <h1>JSON Formatter & <br><span class="text-gradient">Cleaner</span></h1>
@@ -259,25 +277,9 @@
 
     jsonInput.addEventListener('input', updateCounts);
 
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = document.getElementById('themeIcon');
-    const applyTheme = (theme) => {
-        document.documentElement.setAttribute('data-theme', theme);
-        themeIcon.textContent = theme === 'dark' ? '☀️' : '◑';
-    };
-
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    applyTheme(savedTheme);
-
-    themeToggle.addEventListener('click', () => {
-        const current = document.documentElement.getAttribute('data-theme') || 'light';
-        const next = current === 'dark' ? 'light' : 'dark';
-        localStorage.setItem('theme', next);
-        applyTheme(next);
-    });
-
     updateCounts();
 })();
 </script>
+<script src="js/site.js?v=1.0"></script>
 </body>
 </html>

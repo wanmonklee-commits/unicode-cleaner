@@ -20,21 +20,48 @@
 <meta name="twitter:description" content="Read the Privacy Policy for Unicode Cleaner, including details about cookies, Google AdSense, analytics, and data protection. 100% client-side tool.">
 <meta name="twitter:image" content="https://unicodecleaner.online/unicode-cleaner-preview.jpg">
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/style.css?v=3.0">
 <meta name="theme-color" content="#4f46e5">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icons/icon-180.png">
+<link rel="manifest" href="/manifest.json">
 
 </head>
 <body>
 
 <div class="container">
 
-<header>
-    <nav>
-        <a href="/">Home</a>
-    </nav>
+<nav class="top-nav" aria-label="Primary navigation">
+    <a class="nav-brand" href="/" aria-label="UnicodeCleaner home">
+        <img class="brand-mark" src="/assets/brand-mark.svg" alt="" width="36" height="36">
+        <span class="brand-wordmark"><span>Unicode</span><strong>Cleaner</strong></span>
+    </a>
+
+    <div class="nav-links" aria-label="Main links">
+        <a href="/">Tools</a>
+        <a href="/#guides">Guides</a>
+        <a href="/about.html">About</a>
+    </div>
+
+    <div class="nav-actions">
+        <details class="mobile-menu">
+            <summary aria-label="Open menu">Menu</summary>
+            <div class="mobile-menu-panel">
+                <a href="/">Tools</a>
+                <a href="/#guides">Guides</a>
+                <a href="/about.html">About</a>
+            </div>
+        </details>
+        <button class="btn-icon" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+            <span id="themeIcon" aria-hidden="true">☾</span>
+        </button>
+    </div>
+</nav>
+
+<div class="page-intro">
     <h1>Privacy Policy</h1>
     <p><strong>Effective Date:</strong> February 25, 2026</p>
-</header>
+</div>
 
 <main>
 
@@ -184,5 +211,6 @@ If you have questions regarding this Privacy Policy, contact:
 
 </div>
 
+<script src="js/site.js?v=1.0"></script>
 </body>
 </html>

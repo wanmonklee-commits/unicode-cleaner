@@ -150,15 +150,6 @@ statsList.innerHTML = Object.entries(counts).map(([hex, count]) => `
     }
 });
 
-    // Load saved theme
-    let savedTheme;
-try {
-    savedTheme = localStorage.getItem('theme');
-} catch (e) {}
-    if (savedTheme === 'dark' || savedTheme === 'light') {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-    }
-
     document.getElementById('loadSampleBtn')?.addEventListener('click', (e) => {
         e.preventDefault();
         textInput.value = "“Smart Quotes”\nZero Width: H\u200Be\u200Bl\u200Bl\u200Bo\nNBSP: Space\u00A0Between\nBOM: \uFEFFMetadata";
@@ -182,12 +173,5 @@ try {
         URL.revokeObjectURL(url);
     });
 
-    document.getElementById('themeToggle')?.addEventListener('click', () => {
-        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-        document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
-  try {
-    localStorage.setItem('theme', isDark ? 'light' : 'dark');
-} catch (e) {}
-    });
 
 })();
